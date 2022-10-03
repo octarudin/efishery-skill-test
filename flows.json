@@ -1,0 +1,267 @@
+[
+    {
+        "id": "56fb833f19b1db00",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a2b6da6ce67f189d",
+        "type": "mqtt-broker",
+        "name": "MQTT Servers",
+        "broker": "broker.mqtt-dashboard.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "7810df024c10de27",
+        "type": "ui_tab",
+        "name": "Tes MQTT UI dan SERVER",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "78d4792e4b315d7b",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "40a11be4ea19ad82",
+        "type": "ui_group",
+        "name": "Read Dummy Sensor Data",
+        "tab": "7810df024c10de27",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "596dfb70754e11b4",
+        "type": "mqtt out",
+        "z": "56fb833f19b1db00",
+        "name": "",
+        "topic": "sub_octa",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a2b6da6ce67f189d",
+        "x": 680,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "393badac653398fe",
+        "type": "ui_switch",
+        "z": "56fb833f19b1db00",
+        "name": "",
+        "label": "ESP8266 LED",
+        "tooltip": "",
+        "group": "40a11be4ea19ad82",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "sub_octa",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 360,
+        "y": 200,
+        "wires": [
+            [
+                "596dfb70754e11b4"
+            ]
+        ]
+    },
+    {
+        "id": "3b84d66ae084938a",
+        "type": "link in",
+        "z": "56fb833f19b1db00",
+        "name": "link in 1",
+        "links": [],
+        "x": 215,
+        "y": 200,
+        "wires": [
+            [
+                "393badac653398fe"
+            ]
+        ]
+    },
+    {
+        "id": "f98a826715062021",
+        "type": "ui_gauge",
+        "z": "56fb833f19b1db00",
+        "name": "",
+        "group": "40a11be4ea19ad82",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Sensor Data",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "255",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "100",
+        "seg2": "200",
+        "className": "",
+        "x": 690,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "efeda6f03259f611",
+        "type": "mqtt in",
+        "z": "56fb833f19b1db00",
+        "name": "",
+        "topic": "pub_octa",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a2b6da6ce67f189d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 340,
+        "y": 280,
+        "wires": [
+            [
+                "f98a826715062021"
+            ]
+        ]
+    }
+]
