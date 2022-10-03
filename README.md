@@ -19,3 +19,4 @@ Koneksi: Kedua perangkat berkomunikasi dengan perantara modul nRF24L01
 - Forwader Node mengirim data ke MQTT server dengan topik pub_octa
 - Forwader Node menerima data dari MQTT server dengan topik sub_octa
 - Jika perangkat handphone mengirim nilai 1 atau 0 pada topik sub_octa, Forwarder Node akan menghidupkan/mematikan lampu LED pada Development Board
+- BackEnd yang saya gunakan untuk melihat data pada MQTT server adalah Node-Red
